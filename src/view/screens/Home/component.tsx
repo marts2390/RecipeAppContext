@@ -1,0 +1,34 @@
+import React, { FC } from 'react'
+import { ICategoriesDataModel } from 'models/categoriesDataModel'
+import { IMealsDataModel } from 'models/mealsDataModel'
+
+import Slider from 'view/components/Slider'
+import RecipeList from './RecipeList'
+
+import styles from './Main.module.scss'
+
+interface IHomeComponentProps {
+  categories: ICategoriesDataModel[];
+  meals: IMealsDataModel[];
+  getRecipesByCategory: (category: string) => void;
+}
+
+const HomeComponent:FC<IHomeComponentProps> = ({ categories, meals, getRecipesByCategory }) => (
+  <div className={ styles.homeScreen }>
+    <h1>Recipe App</h1>
+    <div className={ styles.header }>
+      <h4>Select a Category</h4>
+      {categories && (
+      <Slider
+        sliderItems={ categories }
+        sliderAction={ getRecipesByCategory }
+      />
+      )}
+    </div>
+    <div className={ styles.body }>
+      <RecipeList />
+    </div>
+  </div>
+)
+
+export default HomeComponent

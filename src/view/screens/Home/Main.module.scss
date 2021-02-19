@@ -1,0 +1,30 @@
+@import "src/view/styles/variables.scss";
+
+.homeScreen {
+  padding: 0.5em;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media (min-width: $screen-md) {
+    padding: 2em;
+  }
+
+  h1 {
+    font-size: $font-xl;
+    font-weight: $font-medium;
+    margin-top: 0;
+  }
+
+  .header {
+    padding: 1.5em;
+    background-color: $white;
+    margin-bottom: 2em;
+    border-radius: 10px;
+
+    h4 {
+      font-weight: $font-medium;
+      margin: 0;
+      margin-bottom: 1em;
+    }
+  }
+}
